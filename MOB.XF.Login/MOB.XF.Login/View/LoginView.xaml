@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MOB.XF.Login.View.LoginView">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Entry">
+        <Setter Property="PlaceholderColor" Value="Green" />
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="BackgroundColor" Value="White" />
+      </Style>
+      <Style TargetType="Button">
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <ContentPage.Content>
+		<StackLayout Orientation="Vertical" 
+                 HorizontalOptions="CenterAndExpand" 
+                 VerticalOptions="CenterAndExpand" 
+                 Spacing="15">
+      <Entry x:Name="txtLogin"
+             Placeholder="user" /> 
+			<Entry x:Name="txtSenha"
+             Placeholder="password" 
+             IsPassword="true" />
+			<StackLayout Orientation="Horizontal" 
+                   HorizontalOptions="CenterAndExpand" >
+				<Button x:Name="btnLogin" 
+                Text="Login" 
+					      Clicked="Login_Clicked" />
+				<Button x:Name="btnSignOn" 
+                Text="Register" 
+					      Clicked="FormSignOn_Clicked" />
+				<Button x:Name="btnPasswordRecovery" 
+                Text="I Forgot" 
+					      Clicked="PasswordRecovery_Clicked" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+  
+</ContentPage>

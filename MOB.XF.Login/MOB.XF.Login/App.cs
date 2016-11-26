@@ -12,19 +12,7 @@ namespace MOB.XF.Login
         public App()
         {
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
+            MainPage = new NavigationPage(new View.LoginView());
         }
 
         protected override void OnStart()
