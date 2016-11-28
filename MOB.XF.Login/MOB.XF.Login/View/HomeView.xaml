@@ -5,8 +5,20 @@
              x:Title="Home">
 
   <ContentPage.Content>
-    <StackLayout Padding="20">
-      <Label Text="Aluno" Font="20" />
+    <StackLayout Padding="20" x:Name="rootLayout">
+      <Label Text="Alunos" Font="20" />
+      <ListView x:Name="lstAlunos" ItemsSource="{Binding Usuarios}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout>
+                <Label Text="{Binding Nome}" Font="14" />
+                <Label Text="{Binding Nickname}" Font="10" />
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
     </StackLayout>
   </ContentPage.Content>
   

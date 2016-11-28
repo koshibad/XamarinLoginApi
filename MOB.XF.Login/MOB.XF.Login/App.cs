@@ -12,7 +12,7 @@ namespace MOB.XF.Login
         public App()
         {
             // The root page of your application
-            MainPage = new NavigationPage(new View.LoginView());
+            MainPage = new NavigationPage(new View.HomeView());
         }
 
         protected override void OnStart()

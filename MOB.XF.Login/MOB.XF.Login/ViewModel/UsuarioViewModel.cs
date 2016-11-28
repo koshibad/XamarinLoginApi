@@ -13,22 +13,29 @@ namespace MOB.XF.Login.ViewModel
 {
     public class UsuarioViewModel
     {
-        public async Task<ObservableCollection<Usuario>> LoadUsuarios()
+        public List<Usuario> CopiaUsuario = new List<Usuario>();
+
+        public ObservableCollection<Usuario> Usuarios { get; set; } = new ObservableCollection<Model.Usuario>();
+
+        public UsuarioViewModel()
         {
-            //string sURL = "http://apiauthmobdiogo.azurewebsites.net/api/Usuarios";
+            LoadUsuarios();
+        }
 
-            //HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(sURL));
-            //request.ContentType = "application/json";
-            //request.Method = "GET";
+        private async void LoadUsuarios()
+        {
+            CopiaUsuario = await UsuarioRepository.GetUsuariosSqlAzure();
+            ExcutarFiltro();
+        }
 
-            //using (WebResponse response = await request.GetResponseAsync())
-            //{
-            //    using (Stream stream = response.GetResponseStream())
-            //    {
-            //        JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
-            //        return jsonDoc;
-            //    }
-            //}
+        private void ExcutarFiltro()
+        {
+            for (int index = 0; index < CopiaUsuario.Count; index++)
+            {
+                var item = CopiaUsuario[index];
+                if (index + 1 > Usuarios.Count || !Usuarios[index].Equals(item))
+                    Usuarios.Insert(index, item);
+            }
         }
     }
 }
