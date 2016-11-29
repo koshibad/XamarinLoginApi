@@ -6,19 +6,15 @@
 
   <ContentPage.Content>
     <StackLayout Padding="20" x:Name="rootLayout">
-      <Label Text="Alunos" Font="20" />
-      <ListView x:Name="lstAlunos" ItemsSource="{Binding Usuarios}">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <StackLayout>
-                <Label Text="{Binding Nome}" Font="14" />
-                <Label Text="{Binding Nickname}" Font="10" />
-              </StackLayout>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
+      <Button x:Name="btnVoltar"
+                Text="Voltar"
+					      Clicked="Voltar_Clicked" />
+      <Button x:Name="btnListar"
+                Text="Listar"
+					      Clicked="Listar_Clicked" />
+      <Button x:Name="btnEditar"
+                Text="Editar"
+					      Clicked="Editar_Clicked" />
     </StackLayout>
   </ContentPage.Content>
   

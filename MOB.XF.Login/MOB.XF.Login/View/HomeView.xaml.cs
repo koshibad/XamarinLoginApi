@@ -21,5 +21,20 @@ namespace MOB.XF.Login.View
 
             InitializeComponent();
         }
+
+        public async void Voltar_Clicked(object sender, EventArgs args)
+        {
+            Navigation.PopAsync();
+        }
+
+        public async void Listar_Clicked(object sender, EventArgs args)
+        {
+            Navigation.PushAsync(new UsuarioListaView());
+        }
+
+        public async void Editar_Clicked(object sender, EventArgs args)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

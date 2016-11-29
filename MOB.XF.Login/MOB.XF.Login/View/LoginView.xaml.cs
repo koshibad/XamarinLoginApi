@@ -18,7 +18,7 @@ namespace MOB.XF.Login.View
 
         public async void Login_Clicked(object sender, EventArgs args)
         {
-            
+            Navigation.PushAsync(new HomeView());
         }
 
         public void FormSignOn_Clicked(object sender, EventArgs args)
